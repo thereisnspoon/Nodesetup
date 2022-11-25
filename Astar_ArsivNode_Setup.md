@@ -62,7 +62,12 @@ astar-collator \
 --ws-external
 ```
 
-## 8. RPC sağlık durumunu kontrol et
+## 8. node log kontrol
 ```
-curl -H "Content-Type: application/json" --data '{ "jsonrpc":"2.0", "method":"system_health", "params":[],"id":1 }' localhost:9933
+docker logs -f -n 100 $(docker ps -aq --filter name="astar-container")
+```
+
+## 9. Snapshot ve senkronizasyonu hızlandırma
+```
+
 ```
