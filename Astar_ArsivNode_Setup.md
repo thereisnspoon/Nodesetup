@@ -1,9 +1,9 @@
-## Güncelle
+## 1. Güncelle
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 
-## Gereklileri yükle
+## 2. Gereklileri yükle
 ```
 sudo apt install wget jq build-essential nano unzip -y
 ```
