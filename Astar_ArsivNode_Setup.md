@@ -5,7 +5,7 @@ sudo apt update && sudo apt upgrade -y
 
 ## 2. Gereklileri yükle
 ```
-sudo apt install wget jq build-essential nano unzip -y
+sudo apt install wget jq build-essential nano unzip screen -y
 ```
 
 ## 3. Docker
@@ -39,6 +39,23 @@ cd $HOME
 sudo mkdir /var/lib/astar
 sudo useradd --no-create-home --shell /usr/sbin/nologin astar
 sudo chown astar:astar /var/lib/astar
+```
+
+## 9. Snapshot ayarlama
+Parachain
+```
+screen -S snaphot
+mkdir -p ~/.local/share/astar-collator/chains/shiden/db/full
+cd ~/.local/share/astar-collator/chains/shiden/db/full
+wget -O - https://snapshots.stakecraft.com/astar_2022-11-26.tar | tar xf -
+
+```
+Relaychain
+```
+sudo mkdir -p /var/lib/astar/astar-db/polkadot/chains/polkadot && cd /var/lib/astar/astar-db/polkadot/chains/polkadot
+wget https://dot-rocksdb.polkashots.io/polkadot-13090515.RocksDb.tar.lz4
+lz4 -c -d polkadot-13090515.RocksDb.tar.lz4 | tar -x -C /var/lib/astar/astar-db/polkadot/chains/polkadot
+rm -v polkadot-13090515.RocksDb.tar.lz4
 ```
 
 ## 7. Dockerı çalıştır, ${NODE_NAME} değiştirmeyi unutma
