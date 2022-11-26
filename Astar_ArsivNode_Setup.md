@@ -41,19 +41,28 @@ sudo useradd --no-create-home --shell /usr/sbin/nologin astar
 sudo chown astar:astar /var/lib/astar
 ```
 
-## 9. Snapshot ayarlama
+## 9. Snapshot indir, taşı
 Parachain
 ```
 screen -S snaphot
+```
+```
 mkdir -p ~/.local/share/astar-collator/chains/shiden/db/full
 cd ~/.local/share/astar-collator/chains/shiden/db/full
+```
+```
 wget -O - https://snapshots.stakecraft.com/astar_2022-11-26.tar | tar xf -
 
 ```
 Relaychain
 ```
+screen -S relaychain
+```
+```
 sudo mkdir -p /var/lib/astar/astar-db/polkadot/chains/polkadot && cd /var/lib/astar/astar-db/polkadot/chains/polkadot
 wget https://dot-rocksdb.polkashots.io/polkadot-13090515.RocksDb.tar.lz4
+```
+```
 lz4 -c -d polkadot-13090515.RocksDb.tar.lz4 | tar -x -C /var/lib/astar/astar-db/polkadot/chains/polkadot
 rm -v polkadot-13090515.RocksDb.tar.lz4
 ```
@@ -84,7 +93,3 @@ astar-collator \
 docker logs -f -n 100 $(docker ps -aq --filter name="astar-container")
 ```
 
-## 9. Snapshot ve senkronizasyonu hızlandırma
-```
-
-```
