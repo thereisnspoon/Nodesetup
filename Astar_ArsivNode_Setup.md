@@ -47,8 +47,8 @@ Parachain
 screen -S snaphot
 ```
 ```
-mkdir -p ~/.local/share/astar-collator/chains/shiden/db/full
-cd ~/.local/share/astar-collator/chains/shiden/db/full
+mkdir -p /var/lib/astar/chains/astar/db/full
+cd /var/lib/astar/chains/astar/db/full
 ```
 ```
 wget -O - https://snapshots.stakecraft.com/astar_2022-11-26.tar | tar xf -
@@ -59,11 +59,11 @@ Relaychain
 screen -S relaychain
 ```
 ```
-sudo mkdir -p /var/lib/astar/astar-db/polkadot/chains/polkadot && cd /var/lib/astar/astar-db/polkadot/chains/polkadot
+sudo mkdir -p /var/lib/astar/polkadot/chains/polkadot/ && cd /var/lib/astar/polkadot/chains/polkadot/
 wget https://dot-rocksdb.polkashots.io/polkadot-13090515.RocksDb.tar.lz4
 ```
 ```
-lz4 -c -d polkadot-13090515.RocksDb.tar.lz4 | tar -x -C /var/lib/astar/astar-db/polkadot/chains/polkadot
+lz4 -c -d polkadot-13090515.RocksDb.tar.lz4 | tar -x -C /var/lib/astar/polkadot/chains/polkadot/
 rm -v polkadot-13090515.RocksDb.tar.lz4
 ```
 
