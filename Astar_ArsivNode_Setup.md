@@ -41,7 +41,7 @@ sudo useradd --no-create-home --shell /usr/sbin/nologin astar
 sudo chown astar:astar /var/lib/astar
 ```
 
-## 9. Snapshot indir, taşı
+## 7. Snapshot indir, taşı
 Parachain
 ```
 screen -S snaphot
@@ -67,7 +67,7 @@ lz4 -c -d polkadot-13090515.RocksDb.tar.lz4 | tar -x -C /var/lib/astar/polkadot/
 rm -v polkadot-13090515.RocksDb.tar.lz4
 ```
 
-## 7. Dockerı çalıştır, ${NODE_NAME} değiştirmeyi unutma
+## 8. Dockerı çalıştır, ${NODE_NAME} değiştirmeyi unutma
 ```
 docker run -d \
 --name astar-container \
@@ -88,7 +88,7 @@ astar-collator \
 --ws-external
 ```
 
-## 8. node log kontrol
+## 9. node log kontrol
 ```
 docker logs -f -n 100 $(docker ps -aq --filter name="astar-container")
 ```
