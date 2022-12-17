@@ -49,12 +49,15 @@ wget https://snapshot1.fantom.network/files/pruned/snapshot-15-Dec-2022-10-24/op
 ```
 bu guide yazıldığı sırada güncel snapshot 15 December idi, daha günceline https://snapshot1.fantom.network/files/pruned/ adresinden ulaşabilirsiniz.
 İndirme işlemleri uzun sürecek, screenden çıkarak ara ara kontrol edin, tamamlanınca 7. kısımdan devam edin.
-## 7. Dosyaları açalım ve taşıyalım
+## 7. Dosyaları açalım, taşıyalım ve yer kazanalım.
 ```
 tar zxvf opera-pruned_15-Dec-2022-10-24.tar.gz
 ```
 ```
 mv ~/download/.opera ~/.opera
+```
+```
+rm -rf ~/download
 ```
 ## 8. Systemd dosyası oluşturalım.
 ```
