@@ -10,7 +10,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 ## 2. Gereklileri yükle
 ```
-sudo apt-get install build-essential git screen tar unzip  -y
+sudo apt-get install build-essential git screen tar unzip node-ws  -y
 
 ```
 ## 3. Go yükle
@@ -100,3 +100,9 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 http://IP:18545
 ws://IP:18546
 ```
+```
+wscat --connect ws://localhost:18546
+{"id":1, "jsonrpc":"2.0", "method": "eth_blockNumber","params": []}
+```
+## 13. Güncel Blok için Explorer
+https://ftmscan.com
