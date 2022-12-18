@@ -106,3 +106,8 @@ wscat --connect ws://localhost:18546
 ```
 ## 13. Güncel Blok için Explorer
 https://ftmscan.com
+
+### Kaynak: 
+#### https://docs.fantom.foundation/node/run-a-read-only-node 
+#### https://docs.blastapi.io/running-a-node/supported-chains/fantom/mainnet
+
