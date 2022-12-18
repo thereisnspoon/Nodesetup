@@ -1,8 +1,10 @@
 ## Sunucu özellikleri şunlar:
 #### 16GB RAM
 #### 4 vCPUs
-#### At least 1.8 TB of storage
-### kaynak: https://docs.fantom.foundation/node/run-a-read-only-node
+#### En az 1.8 TB of storage
+### Kaynak: 
+#### https://docs.fantom.foundation/node/run-a-read-only-node 
+#### https://docs.blastapi.io/running-a-node/supported-chains/fantom/mainnet
 ## 1. Güncelle
 ```
 sudo apt update && sudo apt upgrade -y
@@ -107,7 +109,5 @@ wscat --connect ws://localhost:18546
 ## 13. Güncel Blok için Explorer
 https://ftmscan.com
 
-### Kaynak: 
-#### https://docs.fantom.foundation/node/run-a-read-only-node 
-#### https://docs.blastapi.io/running-a-node/supported-chains/fantom/mainnet
+
 
