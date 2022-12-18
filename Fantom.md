@@ -1,7 +1,7 @@
 ## Sunucu özellikleri şunlar:
 #### 16GB RAM
 #### 4 vCPUs
-#### At least 2 TB of storage
+#### At least 1.8 TB of storage
 ### kaynak: https://docs.fantom.foundation/node/run-a-read-only-node
 ## 1. Güncelle
 ```
