@@ -19,11 +19,12 @@ sudo apt update && sudo apt upgrade -y
 sudo ufw allow 30303
 
 ```
-## 3. Secret file ve config file oluşturalım.
+## 3.a. Secret file oluşturalım.
 ```
-mkdir jwtsecret && cd jwtsecret && openssl rand -hex 32 | tr -d "\n" > "/root/jwtsecret/jwt.hex"
+mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 
 ```
+## 3.b. Config file oluşturalım. 
 ```
 sudo tee <<EOF >/dev/null /root/jwtsecret/config.toml
 [Eth]
@@ -123,41 +124,95 @@ Enabled = true
 HTTP = "0.0.0.0"
 Port = 6060
 EOF
-```
-## 4. Geth çalıştıralım.
-```
-cd
-screen -S ethereum
 
 ```
+## 4. Geth systemd oluşturalım.
 ```
-geth --config=/root/jwtsecret/config.toml --authrpc.jwtsecret /root/jwtsecret/jwt.hex --authrpc.port 8551 --bootnodes enode://6f8a80d14311c39f35f516fa664deaaaa13e85b2f7493f37f6144d86991ec012937307647bd3b9a82abe2974e1407241d54947bbb39763a4cac9f77166ad92a0@10.3.58.6:30303?discport=30301
+sudo tee <<EOF >/dev/null /etc/systemd/system/geth.service
+[Unit]
+Description=Geth Execution Layer Client service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=$USER
+Restart=on-failure
+RestartSec=3
+TimeoutSec=300
+ExecStart=/usr/bin/geth \
+  --mainnet \
+  --metrics \
+  --pprof \
+  --config=/root/jwtsecret/config.toml \
+  --authrpc.jwtsecret=/root/jwtsecret/jwt.hex \
+  --authrpc.port=8551 \
+  --bootnodes enode://6f8a80d14311c39f35f516fa664deaaaa13e85b2f7493f37f6144d86991ec012937307647bd3b9a82abe2974e1407241d54947bbb39763a4cac9f77166ad92a0@10.3.58.6:30303?discport=30301
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
 ```
-## 5. Lighthouse kurarak çalıştıralım.
-### Screenden çıkmadan CTRL + A + C ile yeni session açalım.
+
+## 5. Lighthouse indirelim
 
 ```
 cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v3.3.0/lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz
 tar -xvf lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
-cd consensus
 
 ```
+## 6. Lighthouse systemd oluşturalım
+
 ```
-./lighthouse bn \
-  --network mainnet \
-  --execution-endpoint http://localhost:8551 \
-  --execution-jwt /root/jwtsecret/jwt.hex \
-  --checkpoint-sync-url https://mainnet.checkpoint.sigp.io \
-  --disable-deposit-contract-sync
-  
+sudo tee <<EOF >/dev/null /etc/systemd/system/lighthouse.service
+[Unit]
+Description=Lighthouse: Ethereum Beacon Node
+After=syslog.target network.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/root/consensus/lighthouse \
+--network mainnet beacon_node \
+--execution-endpoint http://localhost:8551 \
+--execution-jwt /root/jwtsecret/jwt.hex \
+--checkpoint-sync-url https://mainnet.checkpoint.sigp.io \
+--disable-deposit-contract-sync
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+RestartSec=10s
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=lighthouse-bn
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 ```
-## 6. Sync kontrol
+## 7. Her iki layer'ı da başlatalım
+```
+sudo systemctl enable geth
+sudo systemctl enable lighthouse
+sudo systemctl daemon-reload
+sudo systemctl start geth
+sudo systemctl start lighthouse
+
+```
+## 8. Log kontrol
+```
+sudo journalctl -u geth -f
+sudo journalctl -u lighthouse -f
+```
+
+## 9. Sync kontrol
 ```
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "eth_blockNumber","params": []}' localhost:8545
 
 ```
-## 7. RPC 
+## 10. RPC 
 ```
 http://IP:8545
 ws://IP:8546
