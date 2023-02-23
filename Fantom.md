@@ -109,5 +109,12 @@ wscat --connect ws://localhost:18546
 ## 13. Güncel Blok için Explorer
 https://ftmscan.com
 
+## 14. Senkronizasyon problemi olduğunda sırasıyla aşağıdaki kodları girin.
+```
+sudo systemctl stop fantom
+~/go-opera/build
+./opera fixdirty
+sudo systemctl start fantom
+```
 
 
