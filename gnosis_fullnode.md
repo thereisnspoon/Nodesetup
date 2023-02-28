@@ -27,8 +27,6 @@ unzip nethermind-linux-amd64-1.14.6-6aea772-20221121.zip -d execution
 
 ```
 ## 4. Lighthouse indirelim.
-
-#### Ctrl + A + C ile yeni bir screen session oluşturarak devam edelim.
 ```
 cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v3.3.0/lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz
 tar -xvf lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
