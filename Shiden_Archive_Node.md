@@ -76,4 +76,18 @@ sudo systemctl start shiden.service
 journalctl -f -u shiden.service -n100
 
 ```
+## 8. update
+```
+wget https://github.com/AstarNetwork/Astar/releases/download/v4.46.1/astar-collator-v4.46.1-ubuntu-x86_64.tar.gz
+tar -xvf astar-collator-v4.46.1-ubuntu-x86_64.tar.gz
+
+```
+```
+sudo mv ./astar-collator /var/lib/shiden-data
+sudo chmod +x /var/lib/shiden-data/astar-collator
+sudo systemctl restart shiden.service
+
+```
+
+
 
