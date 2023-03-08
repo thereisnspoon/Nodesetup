@@ -129,7 +129,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 ```
 wget https://github.com/sigp/lighthouse/releases/download/v3.5.1/lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf https://github.com/sigp/lighthouse/releases/download/v3.5.1/lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz
 ```
 ```
 sudo mv ./lighthouse /root/consensus
