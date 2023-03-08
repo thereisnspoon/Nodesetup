@@ -9,10 +9,15 @@
 ## 1. Geth kuralım ve güncelleyelim.
 ```
 sudo apt-get install software-properties-common screen ufw -y
+```
+```
 sudo add-apt-repository -y ppa:ethereum/ethereum
+```
+```
 sudo apt-get install ethereum -y
+```
+```
 sudo apt update && sudo apt upgrade -y
-
 ```
 ## 2. Port ayarlarını yapalım.
 ```
@@ -158,8 +163,8 @@ EOF
 ## 5. Lighthouse indirelim
 
 ```
-cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v3.3.0/lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
+cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v3.5.1/lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
 ## 6. Lighthouse systemd oluşturalım
