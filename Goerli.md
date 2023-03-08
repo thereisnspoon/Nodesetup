@@ -122,3 +122,20 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 http://IP:8545
 ws://IP:8546
 ```
+
+## 11. Tumblorkians update
+```
+sudo apt update && sudo apt upgrade -y
+```
+```
+wget https://github.com/sigp/lighthouse/releases/download/v3.5.1/lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf https://github.com/sigp/lighthouse/releases/download/v3.5.1/lighthouse-v3.5.1-x86_64-unknown-linux-gnu-portable.tar.gz
+```
+```
+sudo mv ./lighthouse /root/consensus
+sudo chmod +x /root/consensus/lighthouse
+```
+```
+sudo systemctl restart geth
+sudo systemctl restart lighthouse
+```
