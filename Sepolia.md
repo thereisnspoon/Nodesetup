@@ -51,6 +51,7 @@ ExecStart=/usr/bin/geth \
     --ws \
     --ws.addr 0.0.0.0 \
     --ws.port 8546 \
+    --rpc.gascap 150000000 \
     --ws.api net,eth,personal,web3
     
 [Install]
