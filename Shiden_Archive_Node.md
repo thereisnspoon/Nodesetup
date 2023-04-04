@@ -78,8 +78,8 @@ journalctl -f -u shiden.service -n100
 ```
 ## 8. update
 ```
-wget https://github.com/AstarNetwork/Astar/releases/download/v4.46.1/astar-collator-v4.46.1-ubuntu-x86_64.tar.gz
-tar -xvf astar-collator-v4.46.1-ubuntu-x86_64.tar.gz
+wget https://github.com/AstarNetwork/Astar/releases/download/v5.3.0/astar-collator-v5.3.0-ubuntu-x86_64.tar.gz
+tar -xvf astar-collator-v5.3.0-ubuntu-x86_64.tar.gz
 
 ```
 ```
