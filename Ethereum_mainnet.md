@@ -130,3 +130,84 @@ http://IP:8545
 ws://IP:8546
 ```
 
+## 11. Capella/Shanghai ("Shapella") upgrade
+```
+sudo systemctl stop geth
+```
+```
+sudo systemctl stop lighthouse
+```
+```
+rm /etc/systemd/system/geth.service
+```
+```
+sudo tee <<EOF >/dev/null /etc/systemd/system/geth.service
+[Unit]
+Description=Geth Execution Layer Client service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=$USER
+Restart=on-failure
+RestartSec=3
+TimeoutSec=300
+ExecStart=/usr/bin/geth \
+  --mainnet \
+  --syncmode snap \
+  --datadir "/data/ethereum" \
+  --http \
+  --authrpc.addr localhost \
+  --authrpc.vhosts="localhost" \
+  --authrpc.port 8551 \
+  --authrpc.jwtsecret=/root/jwtsecret/jwt.hex \
+  --http.api net,eth,personal,web3,engine,admin \
+  --http.addr 0.0.0.0 \
+  --http.port 8545 \
+  --ws \
+  --ws.addr 0.0.0.0 \
+  --ws.port 8546 \
+  --rpc.gascap 150000000 \
+  --ws.api net,eth,personal,web3
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+```
+sudo apt update && sudo apt upgrade -y
+```
+```
+geth version-check
+``` 
+#### ÜSTTEKİ KODDAN SONRA "version=Geth/v1.11.5-stable" çıktısı almalısınız.
+
+
+```
+wget https://github.com/sigp/lighthouse/releases/download/v4.0.1/lighthouse-v4.0.1-x86_64-unknown-linux-gnu-portable.tar.gz
+```
+```
+tar -xvf lighthouse-v4.0.1-x86_64-unknown-linux-gnu-portable.tar.gz
+```
+```
+sudo mv ./lighthouse /root/consensus
+```
+```
+sudo chmod +x /root/consensus/lighthouse
+```
+```
+sudo systemctl daemon-reload
+```
+```
+sudo systemctl start geth
+```
+#30SN KADAR BEKLEDİKTEN SONRA ALTTAKİ KODA GEÇİN
+
+```
+$ sudo systemctl start lighthouse
+```
+```
+sudo journalctl -u lighthouse -f
+```
+#### EN SONKİ KODLA baktığınızda loglar arasında "Ready for Capella" görmelisiniz. GÖRÜYORSANIZ GÜNCELLEME BAŞARILI OLMUŞTUR.
