@@ -51,17 +51,20 @@ ExecStart=/var/lib/shiden-data/astar-collator \
      --ws-port 9944 \
      --execution wasm \
      --pruning archive \
-     --unsafe-rpc-external \
-     --ws-external \
      --rpc-cors all \
      --base-path /var/lib/shiden-data \
      --chain shiden \
      --name thereisnospoon \
+     --enable-evm-rpc \
+     --trie-cache-size 1 \
+     --rpc-max-response-size 128 \
+     --ws-max-connections 10000 \
+     --unsafe-rpc-external \
+     --unsafe-ws-external
 
 [Install]
 WantedBy=multi-user.target
 EOF
-
 ```
 ## 6. Shiden'i başlatalım.
 ```
