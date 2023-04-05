@@ -147,13 +147,21 @@ RestartSec=3
 TimeoutSec=300
 ExecStart=/usr/bin/geth \
   --mainnet \
-  --metrics \
-  --pprof \
-  --config=/root/jwtsecret/config.toml \
+  --syncmode snap \
+  --datadir "/data/ethereum" \
+  --http \
+  --authrpc.addr localhost \
+  --authrpc.vhosts="localhost" \
+  --authrpc.port 8551 \
   --authrpc.jwtsecret=/root/jwtsecret/jwt.hex \
-  --authrpc.port=8551 \
+  --http.api net,eth,personal,web3,engine,admin \
+  --http.addr 0.0.0.0 \
+  --http.port 8545 \
+  --ws \
+  --ws.addr 0.0.0.0 \
+  --ws.port 8546 \
   --rpc.gascap 150000000 \
-  --bootnodes enode://6f8a80d14311c39f35f516fa664deaaaa13e85b2f7493f37f6144d86991ec012937307647bd3b9a82abe2974e1407241d54947bbb39763a4cac9f77166ad92a0@10.3.58.6:30303?discport=30301
+  --ws.api net,eth,personal,web3
 
 [Install]
 WantedBy=multi-user.target
