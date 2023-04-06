@@ -132,12 +132,8 @@ ws://IP:8546
 
 ## 11. Capella/Shanghai ("Shapella") upgrade
 ```
-sudo systemctl stop geth
+sudo systemctl stop geth && sudo systemctl stop lighthouse
 ```
-```
-sudo systemctl stop lighthouse
-```
-
 ```
 sudo apt update && sudo apt upgrade -y
 ```
@@ -168,7 +164,7 @@ sudo systemctl start geth
 #30SN KADAR BEKLEDİKTEN SONRA ALTTAKİ KODA GEÇİN
 
 ```
-$ sudo systemctl start lighthouse
+sudo systemctl start lighthouse
 ```
 ```
 sudo journalctl -u lighthouse -f
