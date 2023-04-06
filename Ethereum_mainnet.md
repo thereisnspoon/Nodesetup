@@ -137,44 +137,7 @@ sudo systemctl stop geth
 ```
 sudo systemctl stop lighthouse
 ```
-```
-rm /etc/systemd/system/geth.service
-```
-```
-sudo tee <<EOF >/dev/null /etc/systemd/system/geth.service
-[Unit]
-Description=Geth Execution Layer Client service
-Wants=network-online.target
-After=network-online.target
 
-[Service]
-Type=simple
-User=$USER
-Restart=on-failure
-RestartSec=3
-TimeoutSec=300
-ExecStart=/usr/bin/geth \
-  --mainnet \
-  --syncmode snap \
-  --datadir "/data/ethereum" \
-  --http \
-  --authrpc.addr localhost \
-  --authrpc.vhosts="localhost" \
-  --authrpc.port 8551 \
-  --authrpc.jwtsecret=/root/jwtsecret/jwt.hex \
-  --http.api net,eth,personal,web3,engine,admin \
-  --http.addr 0.0.0.0 \
-  --http.port 8545 \
-  --ws \
-  --ws.addr 0.0.0.0 \
-  --ws.port 8546 \
-  --rpc.gascap 150000000 \
-  --ws.api net,eth,personal,web3
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
 ```
 sudo apt update && sudo apt upgrade -y
 ```
