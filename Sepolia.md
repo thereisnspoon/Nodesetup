@@ -122,3 +122,18 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 http://IP:8545
 ws://IP:8546
 ```
+
+## 11. Güncelleme (13.06.2023)
+```
+sudo apt update && sudo apt upgrade -y
+geth version-check
+
+wget https://github.com/sigp/lighthouse/releases/download/v4.2.0/lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
+sudo mv ./lighthouse /root/consensus
+sudo chmod +x /root/consensus/lighthouse
+
+sudo systemctl daemon-reload
+sudo systemctl restart geth
+sudo systemctl restart lighthouse
+```
