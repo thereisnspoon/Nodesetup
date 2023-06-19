@@ -11,7 +11,7 @@ sudo apt update && sudo apt upgrade -y
 
 ## 2. Gereklileri yükle
 ```
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+sudo apt install apt-transport-https ca-certificates curl jq software-properties-common -y
 ```
 ## 3. Docker
 ```
