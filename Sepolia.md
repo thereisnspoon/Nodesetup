@@ -126,7 +126,7 @@ http://IP:8545
 ws://IP:8546
 ```
 
-## 11. Güncelleme (13.06.2023)
+## 11. Güncelleme (13.06.2023) (Yeni kurulum yapanların bu adımı yapmasına gerek yoktur.)
 ```
 sudo apt update && sudo apt upgrade -y
 geth version-check
