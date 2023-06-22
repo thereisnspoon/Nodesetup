@@ -63,8 +63,8 @@ EOF
 ## 5. Lighthouse indirelim
 
 ```
-cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v3.3.0/lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
+cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.2.0/lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
 ## 6. Lighthouse systemd oluşturalım
@@ -103,6 +103,7 @@ sudo systemctl enable geth
 sudo systemctl enable lighthouse
 sudo systemctl daemon-reload
 sudo systemctl start geth
+sleep 60
 sudo systemctl start lighthouse
 
 ```
