@@ -4,7 +4,7 @@
 #### At least 200GB storage
 ## 1. Gereklilikleri yükleyelim ve güncelleyelim.
 ```
-sudo apt install software-properties-common libjemalloc-dev screen curl ufw -y
+sudo apt install software-properties-common libjemalloc-dev default-jdk default-jre screen curl ufw -y
 ```
 ```
 sudo apt update && sudo apt upgrade -y
