@@ -11,11 +11,11 @@ sudo apt update && sudo apt upgrade -y
 ```
 ## 2. Dizine config, genesis file ve besu kuralım.
 ```
-mkdir palm-node && cd palm-node
-```
-```
-wget https://hyperledger.jfrog.io/hyperledger/besu-binaries/besu/23.4.1/besu-23.4.1.tar.gz
+cd && wget https://hyperledger.jfrog.io/hyperledger/besu-binaries/besu/23.4.1/besu-23.4.1.tar.gz
 tar -xvf besu-23.4.1.tar.gz
+```
+```
+mkdir palm-node && cd palm-node
 ```
 ```
 curl -O https://genesis-files.palm.io/prd/genesis.json
@@ -48,8 +48,8 @@ After=syslog.target network.target
 [Service]
 User=root
 Type=simple
-ExecStart=/root/palm-node/besu \
---config-file=/path/to/config.toml \
+ExecStart=./besu-23.4.1/bin/besu \
+--config-file=/root/palm-node/config.toml \
 --sync-mode=FAST \
 --random-peer-priority-enabled=true \
 --rpc-http-enabled=true \
