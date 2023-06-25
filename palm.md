@@ -24,7 +24,7 @@ curl -O https://genesis-files.palm.io/prd/genesis.json
 ```
 sudo tee <<EOF >/dev/null /root/palm-node/config.toml
 # Palm Mainnet genesis file
-genesis-file="genesis.json"
+genesis-file="/root/palm-node/genesis.json"
 
 # Network bootnodes
 bootnodes=["enode://9cccbaae702d477c5fd4d704a2d6f92a90005f62de980b11b0d042877bf759774cf7d68d358c59427622e87538bc46afa1195d6ac12cb153d6771461c1830d1b@54.243.108.56:30303","enode://d6518f4f318a172158cf73c3e615c4eb488efb14c20b4a2f13570bf01092573222cd6935599a80017512457fb7f229cf6562f9d038b5d0dc98db95074d4a98b3@18.235.247.31:30303"]
