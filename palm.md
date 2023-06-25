@@ -4,11 +4,12 @@
 #### At least 200GB storage
 ## 1. Gereklilikleri yükleyelim ve güncelleyelim.
 ```
-sudo apt install software-properties-common libjemalloc-dev default-jdk default-jre screen curl ufw -y
-```
-```
 sudo apt update && sudo apt upgrade -y
 ```
+```
+sudo apt install software-properties-common libjemalloc-dev openjdk-17-jdk openjdk-17-jre screen curl ufw -y
+```
+
 ## 2. Dizine config, genesis file ve besu kuralım.
 ```
 cd && wget https://hyperledger.jfrog.io/hyperledger/besu-binaries/besu/23.4.1/besu-23.4.1.tar.gz
