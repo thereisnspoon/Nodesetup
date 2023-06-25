@@ -49,7 +49,7 @@ After=syslog.target network.target
 [Service]
 User=root
 Type=simple
-ExecStart=./besu-23.4.1/bin/besu \
+ExecStart=/root/besu-23.4.1/bin/besu \
 --config-file=/root/palm-node/config.toml \
 --sync-mode=FAST \
 --random-peer-priority-enabled=true \
