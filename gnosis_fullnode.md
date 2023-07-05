@@ -22,14 +22,14 @@ mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 ```
 ## 3. Nethermind indirelim.
 ```
-cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.14.6/nethermind-linux-amd64-1.14.6-6aea772-20221121.zip
-unzip nethermind-linux-amd64-1.14.6-6aea772-20221121.zip -d execution
+cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.19.3/nethermind-1.19.3-e8ac1da4-linux-x64.zip
+unzip nethermind-1.19.3-e8ac1da4-linux-x64.zip -d execution
 
 ```
 ## 4. Lighthouse indirelim.
 ```
-cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v3.3.0/lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf lighthouse-v3.3.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
+cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.2.0/lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
 ## 5. Nethermind systemd oluşturalım. 
@@ -89,4 +89,24 @@ sudo systemctl start lighthouse
 ```
 sudo journalctl -fo cat -u nethermind
 sudo journalctl -fo cat -u lighthouse
+```
+## 9. RPC 
+```
+http://IP:8545
+ws://IP:8546
+```
+## 10. Güncelleme Shanghai (05.07.2023)
+```
+cd
+sudo systemctl stop nethermind
+wget https://github.com/NethermindEth/nethermind/releases/download/1.19.3/nethermind-1.19.3-e8ac1da4-linux-x64.zip
+unzip -o nethermind-1.19.3-e8ac1da4-linux-x64.zip -d execution -o
+sudo systemctl start nethermind
+sudo systemctl stop lighthouse
+wget https://github.com/sigp/lighthouse/releases/download/v4.2.0/lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
+sudo mv ./lighthouse /root/consensus
+sudo chmod +x /root/consensus/lighthouse
+sudo systemctl start lighthouse
+
 ```
