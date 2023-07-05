@@ -102,7 +102,7 @@ ws://IP:8546
 cd
 sudo systemctl stop nethermind
 wget https://github.com/NethermindEth/nethermind/releases/download/1.19.3/nethermind-1.19.3-e8ac1da4-linux-x64.zip
-unzip -o nethermind-1.19.3-e8ac1da4-linux-x64.zip -d execution -o
+unzip -o nethermind-1.19.3-e8ac1da4-linux-x64.zip -d execution
 sudo systemctl start nethermind
 sudo systemctl stop lighthouse
 wget https://github.com/sigp/lighthouse/releases/download/v4.2.0/lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
