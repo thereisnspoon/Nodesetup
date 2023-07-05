@@ -4,6 +4,8 @@
 #### At least 600 GB of storage
 #### Ubuntu 20.04
 
+### ❌❌❌!!! Yeni kurulum yapacakların güncelleme yapmasına gerek yoktur. ❌❌❌
+
 ## 1. Güncelle
 ```
 sudo apt update && sudo apt upgrade -y
