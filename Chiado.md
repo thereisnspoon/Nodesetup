@@ -75,19 +75,6 @@ SyslogIdentifier=lighthouse-bn
 WantedBy=multi-user.target
 EOF
 
-KillMode=process
-KillSignal=SIGINT
-TimeoutStopSec=90
-Restart=on-failure
-RestartSec=10s
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=lighthouse-bn
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
 ```
 ## 7. Nethermind ve Lighthouse başlatalım.
 ```
