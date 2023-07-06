@@ -94,5 +94,5 @@ sudo journalctl -fo cat -u lighthouse
 ## 9. RPC 
 ```
 http://IP:8545
-ws://IP:8546
+ws://IP:8545
 ```
