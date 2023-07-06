@@ -55,14 +55,6 @@ EOF
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/lighthouse.service
 [Unit]
-Description=Lighthouse: Chiado Beacon Node
-After=syslog.target network.target
-
-[Service]
-User=root
-Type=simple
-sudo tee <<EOF >/dev/null /etc/systemd/system/lighthouse.service
-[Unit]
 Description=Lighthouse: Gnosis Beacon Node
 After=syslog.target network.target
 
