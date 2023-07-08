@@ -33,6 +33,14 @@ cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/downlo
 tar -xvf lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
+```
+cd consensus && mkdir network_config &&
+cd network_config &&
+wget https://github.com/gnosischain/configs/raw/main/chiado/config.yaml &&
+wget https://github.com/gnosischain/configs/raw/main/chiado/genesis.ssz &&
+wget https://github.com/gnosischain/configs/raw/main/chiado/deploy_block.txt
+
+```
 ## 5. Nethermind systemd oluşturalım. 
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/nethermind.service
