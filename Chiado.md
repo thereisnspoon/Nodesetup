@@ -37,7 +37,8 @@ cd consensus && mkdir network_config &&
 cd network_config &&
 wget https://github.com/gnosischain/configs/raw/main/chiado/config.yaml &&
 wget https://github.com/gnosischain/configs/raw/main/chiado/genesis.ssz &&
-wget https://github.com/gnosischain/configs/raw/main/chiado/deploy_block.txt
+wget https://github.com/gnosischain/configs/raw/main/chiado/deploy_block.txt &&
+cd
 
 ```
 ## 5. Nethermind systemd oluşturalım. 
