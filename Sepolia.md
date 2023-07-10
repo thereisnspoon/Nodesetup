@@ -8,6 +8,7 @@
 ## 1. Geth kuralım ve güncelleyelim.
 ```
 sudo apt-get install software-properties-common screen ufw -y
+
 ```
 ```
 sudo add-apt-repository -y ppa:ethereum/ethereum
