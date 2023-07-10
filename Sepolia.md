@@ -46,6 +46,7 @@ RestartSec=3
 TimeoutSec=300
 ExecStart=/usr/bin/geth \
     --sepolia \
+    --syncmode snap \
     --datadir "/data/ethereum" \
     --http \
     --authrpc.addr localhost \
