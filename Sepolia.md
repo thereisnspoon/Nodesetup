@@ -111,7 +111,7 @@ sudo systemctl enable geth
 sudo systemctl enable lighthouse
 sudo systemctl daemon-reload
 sudo systemctl start geth
-sleep 60
+sleep 180
 sudo systemctl start lighthouse
 
 ```
