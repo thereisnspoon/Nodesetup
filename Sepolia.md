@@ -146,3 +146,10 @@ sudo systemctl daemon-reload
 sudo systemctl restart geth
 sudo systemctl restart lighthouse
 ```
+## 12. Pruning
+```
+sudo systemctl stop geth
+sleep 190
+sudo geth --datadir /data/ethereum snapshot prune-state
+sudo systemctl start geth
+```
