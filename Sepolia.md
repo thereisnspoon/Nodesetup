@@ -12,9 +12,11 @@ sudo apt-get install software-properties-common screen ufw -y
 ```
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get install ethereum -y
+
 ```
 ```
 sudo apt update && sudo apt upgrade -y
+
 ```
 
 ## 2. Port ayarlarını yapalım.
