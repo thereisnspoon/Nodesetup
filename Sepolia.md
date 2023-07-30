@@ -49,7 +49,7 @@ ExecStart=/usr/bin/geth \
     --syncmode snap \
     --datadir "/data/ethereum" \
     --http \
-    --authrpc.addr localhost \
+    --authrpc.addr 0.0.0.0 \
     --authrpc.vhosts="localhost" \
     --authrpc.port 8551 \
     --authrpc.jwtsecret=/root/jwtsecret/jwt.hex \
