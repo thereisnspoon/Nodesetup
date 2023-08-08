@@ -70,7 +70,7 @@ After=syslog.target network.target
 [Service]
 User=root
 Type=simple
-ExecStart=/root/consensus/lighthouse --testnet-dir=/root/consensus/network_config bn --http --execution-endpoint http://localhost:8551 --execution-jwt /root/jwtsecret/jwt.hex --checkpoint-sync-url "https://checkpoint.chiadochain.net" --disable-deposit-contract-sync --boot-nodes=enr:-L64QOijsdi9aVIawMb5h5PWueaPM9Ai6P17GNPFlHzz7MGJQ8tFMdYrEx8WQitNKLG924g2Q9cCdzg54M0UtKa3QIKCMxaHYXR0bmV0c4j__________4RldGgykDE2cEMCAABv__________-CaWSCdjSCaXCEi5AaWYlzZWNwMjU2azGhA8CjTkD4m1s8FbKCN18LgqlYcE65jrT148vFtwd9U62SiHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
+ExecStart=/root/consensus/lighthouse --testnet-dir=/root/consensus/network_config bn --http --execution-endpoint http://localhost:8551 --execution-jwt /root/jwtsecret/jwt.hex --disable-deposit-contract-sync --boot-nodes=enr:-L64QOijsdi9aVIawMb5h5PWueaPM9Ai6P17GNPFlHzz7MGJQ8tFMdYrEx8WQitNKLG924g2Q9cCdzg54M0UtKa3QIKCMxaHYXR0bmV0c4j__________4RldGgykDE2cEMCAABv__________-CaWSCdjSCaXCEi5AaWYlzZWNwMjU2azGhA8CjTkD4m1s8FbKCN18LgqlYcE65jrT148vFtwd9U62SiHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
 KillMode=process
 KillSignal=SIGINT
 TimeoutStopSec=90
