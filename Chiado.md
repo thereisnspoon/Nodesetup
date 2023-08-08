@@ -24,7 +24,6 @@ mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 ```
 cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.19.3/nethermind-1.19.3-e8ac1da4-linux-x64.zip
 unzip nethermind-1.19.3-e8ac1da4-linux-x64.zip -d execution
-cd /root/execution/configs && wget -o https://github.com/thereisnspoon/Nodesetup/blob/main/chiado.cfg
 
 ```
 ## 4. Lighthouse indirelim.
