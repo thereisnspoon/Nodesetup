@@ -91,6 +91,7 @@ sudo systemctl enable nethermind
 sudo systemctl enable lighthouse
 sudo systemctl daemon-reload
 sudo systemctl start nethermind
+sleep 100s
 sudo systemctl start lighthouse
 
 ```
