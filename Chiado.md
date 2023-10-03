@@ -22,7 +22,7 @@ mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 ```
 ## 3. Nethermind indirelim.
 ```
-cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.20.1/nethermind-1.20.1-9f39c0c7-linux-x64.zip
+cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.20.1/nethermind-1.20.1-9f39c0-linux-x64.zip
 unzip nethermind-1.20.1-9f39c0c7-linux-x64.zip -d execution
 
 ```
