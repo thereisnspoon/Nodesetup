@@ -75,9 +75,9 @@ Restart=on-failure
 RestartSec=10
 User=$USER
 KillSignal=SIGHUP
-ExecStart=$HOME/datadir/palm-data/polygon-edge server \
---chain="$HOME/datadir/palm-data/genesis.json" \
---data-dir="$HOME/datadir/palm-data" \
+ExecStart=/root/palm-data/polygon-edge server \
+--chain="root/palm-data/genesis.json" \
+--data-dir="root/palm-data" \
 --libp2p "0.0.0.0:30301" \
 --devp2p "0.0.0.0:30302"  \
 --jsonrpc="0.0.0.0:8545" \
