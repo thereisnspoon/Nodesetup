@@ -22,14 +22,14 @@ mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 ```
 ## 3. Nethermind indirelim.
 ```
-cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.20.1/nethermind-1.20.1-9f39c0-linux-x64.zip
-unzip nethermind-1.20.1-9f39c0c7-linux-x64.zip -d execution
+cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.23.0/nethermind-1.23.0-bcd3b8ae-linux-x64.zip
+unzip nethermind-1.23.0-bcd3b8ae-linux-x64.zip -d execution
 
 ```
 ## 4. Lighthouse indirelim.
 ```
-cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.3.0/lighthouse-v4.3.0-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf lighthouse-v4.3.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
+cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.5.0/lighthouse-v4.5.0-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v4.5.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
 ```
