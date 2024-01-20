@@ -62,7 +62,6 @@ EOF
 ```
 ## 6. Lighthouse systemd oluşturalım.
 ```
-```
 sudo tee <<EOF >/dev/null /etc/systemd/system/lighthouse.service
 [Unit]
 Description=Lighthouse: Chiado Beacon Node
