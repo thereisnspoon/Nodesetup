@@ -62,6 +62,7 @@ EOF
 ```
 ## 6. Lighthouse systemd oluşturalım.
 ```
+```
 sudo tee <<EOF >/dev/null /etc/systemd/system/lighthouse.service
 [Unit]
 Description=Lighthouse: Chiado Beacon Node
@@ -71,7 +72,8 @@ After=syslog.target network.target
 User=root
 Type=simple
 ExecStart=/root/consensus/lighthouse \
---testnet-dir=/root/consensus/network_config bn \
+--network chiado bn \
+--http \
 --execution-endpoint http://localhost:8551 \
 --execution-jwt /root/jwtsecret/jwt.hex \
 --disable-deposit-contract-sync \
