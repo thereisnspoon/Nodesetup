@@ -22,23 +22,14 @@ mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 ```
 ## 3. Nethermind indirelim.
 ```
-cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.24.0/nethermind-1.24.0-9c1d76b5-linux-x64.zip
-unzip nethermind-1.24.0-9c1d76b5-linux-x64.zip -d execution
+cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.25.2/nethermind-1.25.2-78c7bf5f-linux-x64.zip
+unzip nethermind-1.25.2-78c7bf5f-linux-x64.zip -d execution
 
 ```
 ## 4. Lighthouse indirelim.
 ```
 cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.5.0/lighthouse-v4.5.0-x86_64-unknown-linux-gnu-portable.tar.gz
 tar -xvf lighthouse-v4.5.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
-
-```
-```
-cd consensus && mkdir network_config &&
-cd network_config &&
-wget https://github.com/gnosischain/configs/raw/main/chiado/config.yaml &&
-wget https://github.com/gnosischain/configs/raw/main/chiado/genesis.ssz &&
-wget https://github.com/gnosischain/configs/raw/main/chiado/deploy_block.txt &&
-cd
 
 ```
 ## 5. Nethermind systemd oluşturalım. 
