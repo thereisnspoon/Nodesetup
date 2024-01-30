@@ -71,8 +71,8 @@ EOF
 ## 5. Lighthouse indirelim
 
 ```
-cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.2.0/lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf lighthouse-v4.2.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
+cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.6.0/lighthouse-v4.6.0-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v4.6.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
 ## 6. Lighthouse systemd oluşturalım
