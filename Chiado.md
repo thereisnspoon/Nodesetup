@@ -68,7 +68,7 @@ ExecStart=/root/consensus/lighthouse \
 --execution-jwt /root/jwtsecret/jwt.hex \
 --disable-deposit-contract-sync \
 --boot-nodes=enr:-L64QKYKGQj5ybkfBxyFU5IEVzP7oJkGHJlie4W8BCGAYEi4P0mmMksaasiYF789mVW_AxYVNVFUjg9CyzmdvpyWQ1KCMlmHYXR0bmV0c4j__________4RldGgykDE2cEMCAABv__________-CaWSCdjSCaXCEi5CtNolzZWNwMjU2azGhAuA7BAwIijy1z81AO9nz_MOukA1ER68rGA67PYQ5pF1qiHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo \
---checkpoint-sync-url https://checkpoint.chiado.gnosis.gateway.fm/
+--checkpoint-sync-url https://rpc-gbc.chiadochain.net/
 KillMode=process
 KillSignal=SIGINT
 TimeoutStopSec=90
