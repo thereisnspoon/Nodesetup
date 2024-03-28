@@ -22,14 +22,14 @@ mkdir jwtsecret && openssl rand -hex 32 | tr -d "\n" > "./jwtsecret/jwt.hex"
 ```
 ## 3. Nethermind indirelim.
 ```
-cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.25.3/nethermind-1.25.3-e64bee70-linux-x64.zip
-unzip nethermind-1.25.3-e64bee70-linux-x64.zip -d execution
+cd && mkdir execution && wget https://github.com/NethermindEth/nethermind/releases/download/1.25.4/nethermind-1.25.4-20b10b35-linux-x64.zip
+unzip nethermind-1.25.4-20b10b35-linux-x64.zip -d execution
 
 ```
 ## 4. Lighthouse indirelim.
 ```
-cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v4.6.0/lighthouse-v4.6.0-x86_64-unknown-linux-gnu-portable.tar.gz
-tar -xvf lighthouse-v4.6.0-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
+cd && mkdir consensus && wget https://github.com/sigp/lighthouse/releases/download/v5.1.3/lighthouse-v5.1.3-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvf lighthouse-v5.1.3-x86_64-unknown-linux-gnu-portable.tar.gz --directory  consensus
 
 ```
 ## 5. Nethermind systemd oluşturalım. 
